@@ -19,26 +19,15 @@
 
 / {
     behaviors {
-        l3: l3 {
+        magic: magic {
             compatible = "zmk,behavior-hold-tap";
-            label = "L3";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-            hold-trigger-key-positions = <38>;
-        };
-
-        hrm: hrm {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM";
-            bindings = <&mt>, <&kp>;
+            label = "MAGIC";
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            hold-trigger-key-positions = <13 14 15 16 19 20 21 22>;
+            hold-trigger-key-positions = <13 14 15 16 19 20 21 22 38>;
         };
     };
 
@@ -55,10 +44,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q              &kp W         &kp E            &kp R            &kp T          &kp Y    &kp U             &kp I             &kp O         &kp P                  &kp BSPC
-&kp LCTRL  &hrm LEFT_SHIFT A  &hrm LCTRL S  &hrm LEFT_ALT D  &hrm LEFT_GUI F  &kp G          &kp H    &hrm RIGHT_GUI J  &hrm RIGHT_ALT K  &hrm RCTRL L  &hrm RIGHT_SHIFT SEMI  &kp SQT
-&kp LSHFT  &kp Z              &kp X         &kp C            &kp V            &kp B          &kp N    &kp M             &kp COMMA         &kp DOT       &kp FSLH               &kp ESC
-                                            &kp LGUI         &mo 1            &l3 3 SPACE    &kp RET  &mo 2             &kp RALT
+&kp TAB    &kp Q                &kp W           &kp E              &kp R              &kp T          &kp Y    &kp U               &kp I               &kp O           &kp P                    &kp BSPC
+&kp LCTRL  &magic LEFT_SHIFT A  &magic LCTRL S  &magic LEFT_ALT D  &magic LEFT_GUI F  &kp G          &kp H    &magic RIGHT_GUI J  &magic RIGHT_ALT K  &magic RCTRL L  &magic RIGHT_SHIFT SEMI  &kp SQT
+&kp LSHFT  &kp Z                &kp X           &kp C              &kp V              &kp B          &kp N    &kp M               &kp COMMA           &kp DOT         &kp FSLH                 &kp ESC
+                                                &kp LGUI           &mo 1              &lt 3 SPACE    &kp RET  &mo 2               &kp RALT
             >;
         };
 
