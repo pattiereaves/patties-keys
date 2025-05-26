@@ -6,7 +6,6 @@
 */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -19,15 +18,26 @@
 
 / {
     behaviors {
-        layer_3_access: layer_3_access {
+        l3: l3 {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_3_ACCESS";
+            label = "L3";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
             hold-trigger-key-positions = <38>;
+        };
+
+        hrm: hrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM";
+            bindings = <&mt>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <13 14 15 16 19 20 21 22>;
         };
     };
 
@@ -44,10 +54,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                      &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G                      &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B                      &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 1  &layer_3_access 3 SPACE    &kp RET  &mo 2  &kp RALT
+&kp TAB    &kp Q              &kp W         &kp E            &kp R            &kp T          &kp Y    &kp U             &kp I             &kp O         &kp P                  &kp BSPC
+&kp LCTRL  &hrm LEFT_SHIFT A  &hrm LCTRL S  &hrm LEFT_ALT D  &hrm LEFT_GUI F  &kp G          &kp H    &hrm RIGHT_GUI J  &hrm RIGHT_ALT K  &hrm RCTRL L  &hrm RIGHT_SHIFT SEMI  &kp SQT
+&kp LSHFT  &kp Z              &kp X         &kp C            &kp V            &kp B          &kp N    &kp M             &kp COMMA         &kp DOT       &kp FSLH               &kp ESC
+                                            &kp LGUI         &mo 1            &l3 3 SPACE    &kp RET  &mo 2             &kp RALT
             >;
         };
 
@@ -78,10 +88,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp F1      &kp F2        &kp F3        &kp F4                    &kp F5                    &kp F6     &kp F7     &kp F8    &kp F9     &kp F10        &kp F11
-&kp LCTRL  &trans      &trans        &kp LG(Z)     &kp LG(LA(LC(UP_ARROW)))  &kp LA(LC(LG(DOWN)))      &kp MINUS  &kp EQUAL  &kp F12   &kp LG(Z)  &kp BACKSLASH  &kp GRAVE
-&kp LSHFT  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &kp LC(LG(LA(COMMA)))     &kp LA(LC(LG(PERIOD)))    &kp RCTRL  &kp LEFT   &kp UP    &kp DOWN   &kp RIGHT      &kp LA(LC(LEFT_GUI))
-                                     &kp LGUI      &trans                    &kp SPACE                 &kp RET    &trans     &kp RALT
+&kp TAB    &kp F1  &kp F2                          &kp F3                        &kp F4                    &kp F5                    &kp F6     &kp F7     &kp F8    &kp F9     &kp F10        &kp F11
+&kp LCTRL  &trans  &trans                          &kp LG(Z)                     &kp LG(LA(LC(UP_ARROW)))  &kp LA(LC(LG(DOWN)))      &kp MINUS  &kp EQUAL  &kp F12   &kp LG(Z)  &kp BACKSLASH  &kp GRAVE
+&kp LSHFT  &trans  &kp LS(LA(LC(LG(DOWN_ARROW))))  &kp LS(LG(LA(LC(UP_ARROW))))  &kp LC(LG(LA(COMMA)))     &kp LA(LC(LG(PERIOD)))    &kp RCTRL  &kp LEFT   &kp UP    &kp DOWN   &kp RIGHT      &kp LA(LC(LEFT_GUI))
+                                                   &kp LGUI                      &trans                    &kp SPACE                 &kp RET    &trans     &kp RALT
             >;
         };
 
