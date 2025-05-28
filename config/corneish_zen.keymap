@@ -89,10 +89,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp F1      &kp F2                 &kp F3                  &kp F4                    &kp F5                          &kp F6     &kp F7     &kp F8    &kp F9     &kp F10        &kp F11
-&kp LCTRL  &bt BT_NXT  &trans                 &kp LG(Z)               &kp LG(LA(LC(LS(DOWN))))  &kp LA(LC(LG(LS(UP_ARROW))))    &kp MINUS  &kp EQUAL  &kp F12   &kp LG(Z)  &kp BACKSLASH  &kp GRAVE
-&kp LSHFT  &bt BT_CLR  &kp LA(LC(LG(COMMA)))  &kp LG(LA(LC(PERIOD)))  &kp LC(LG(LA(DOWN)))      &kp LA(LC(LG(UP_ARROW)))        &kp RCTRL  &kp LEFT   &kp UP    &kp DOWN   &kp RIGHT      &kp LA(LC(LEFT_GUI))
-                                              &kp LGUI                &trans                    &kp SPACE                       &kp RET    &trans     &kp RALT
+&trans  &kp F1      &kp F2                 &kp F3                  &kp F4                    &kp F5                          &kp F6     &kp F7     &kp F8    &kp F9     &kp F10        &kp F11
+&trans  &bt BT_NXT  &trans                 &kp LG(Z)               &kp LG(LA(LC(LS(DOWN))))  &kp LA(LC(LG(LS(UP_ARROW))))    &kp MINUS  &kp EQUAL  &kp F12   &kp LG(Z)  &kp BACKSLASH  &kp GRAVE
+&trans  &bt BT_CLR  &kp LA(LC(LG(COMMA)))  &kp LG(LA(LC(PERIOD)))  &kp LC(LG(LA(DOWN)))      &kp LA(LC(LG(UP_ARROW)))        &kp RCTRL  &kp LEFT   &kp UP    &kp DOWN   &kp RIGHT      &kp LA(LC(LEFT_GUI))
+                                           &kp LGUI                &trans                    &kp SPACE                       &kp RET    &trans     &kp RALT
             >;
         };
 
